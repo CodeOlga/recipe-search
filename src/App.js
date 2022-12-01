@@ -1,25 +1,32 @@
 import './App.css';
 import { useEffect, useState } from 'react';
 import video from './food.mp4';
+import MyRecipesComponent from './MyRecipesComponent';
 
 function App() {
-
   const MY_ID = '139c6380';
   const MY_KEY = 'a9c4440dce8fb0b058d4571c6a1f32be';
 
   const [mySearch, setMySearch] = useState('');
+  const [myRecipes,setMyRecipes] = useState([]);
+  const [wordSubmitted, setWordSubmitted] = useState('avocado');
 
   useEffect(() => {
     const getRecipe = async() => {
-      const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=avocado&app_id=${MY_ID}&app_key=${MY_KEY}`);
+      const response = await fetch (`https://api.edamam.com/api/recipes/v2?type=public&q=${wordSubmitted}&app_id=${MY_ID}&app_key=${MY_KEY}`);
       const data = await response.json();
-      console.log(data.hits);
+      setMyRecipes(data.hits);
     }
     getRecipe();
-  }, [])
+  }, [wordSubmitted])
 
 const myRecipeSearch = (e) => {
   setMySearch(e.target.value);
+}
+
+const finalSearch = (e) => {
+  e.preventDefault();
+  setWordSubmitted(mySearch);
 }
 
   return (
@@ -32,17 +39,28 @@ const myRecipeSearch = (e) => {
       </div>
 
       <div className="container">
-        <form>
+        <form onSubmit={finalSearch}>
           <input className='search' placeholder='Search...' onChange={myRecipeSearch} value={mySearch}>
           </input>
         </form>
-
-        <div className="container">
-          <button>
-            <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon" className='icons'/>
-          </button>
-        </div>
       </div>
+
+      <div className="container">
+        <button>
+          <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon" className='icons'/>
+        </button>
+      </div>
+      
+
+      {myRecipes.map(element => (
+        <MyRecipesComponent 
+        label={element.recipe.label} 
+        image={element.recipe.image} 
+        calories={element.recipe.calories}
+        ingredients={element.recipe.ingredientLines}
+        />
+      )
+      )}
     </div>
   );
 }

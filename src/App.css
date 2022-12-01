@@ -26,5 +26,50 @@ video {
   background-color: transparent;
   margin-left: 0px;
   box-shadow: inset 0px 0px 0px 4px #ddd6e8;
-  background-color: transparent;
+}
+
+ul {
+  list-style: none; 
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+li {
+  display: block;
+  padding: .4em .4em .4em .8em;
+  margin: .5em 0 .5em 2.5em;
+  background: #ddd6e8;
+}
+li:hover {
+  background: #DCDDE1;
+}
+
+.icon {
+  width: 32px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, ul, p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button {
+  background: #dbecc4;
+  border: none;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+.par {
+  display: block;
+  padding: .4em .4em .4em .8em;
+  margin: .5em 0 .5em 2.5em;
+  background: #ddd6e8;
+}
+.tasty {
+  padding: 20px;
+  border: 1px solid #575756;
+  box-shadow: inset 0px 0px 0px 20px #ddd6e8;
 }
