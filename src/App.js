@@ -4,6 +4,7 @@ import video from './food.mp4';
 import MyRecipesComponent from './MyRecipesComponent';
 
 function App() {
+
   const MY_ID = '139c6380';
   const MY_KEY = 'a9c4440dce8fb0b058d4571c6a1f32be';
 
@@ -52,8 +53,9 @@ const finalSearch = (e) => {
       </div>
       
 
-      {myRecipes.map(element => (
+      {myRecipes.map((element, index) => (
         <MyRecipesComponent 
+        key={index}
         label={element.recipe.label} 
         image={element.recipe.image} 
         calories={element.recipe.calories}

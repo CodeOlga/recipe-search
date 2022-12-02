@@ -10,9 +10,9 @@ function MyRecipesComponent({label, image, calories, ingredients}) {
       </div>
 
       <ul className="list">
-        {ingredients.map(ingredient => (
-          <li><img className="icon" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/2x/external-check-multimedia-kiranshastry-gradient-kiranshastry.png" alt="icon" />
-            {ingredient}</li>
+        {ingredients.map((ingredient, index) => (
+          <li key={index}><img className="icon" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/2x/external-check-multimedia-kiranshastry-gradient-kiranshastry.png" alt="icon" />
+           {ingredient}</li>
         ))}
       </ul>
 
