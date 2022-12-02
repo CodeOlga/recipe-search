@@ -7,7 +7,6 @@ function App() {
 
   const MY_ID = '139c6380';
   const MY_KEY = 'a9c4440dce8fb0b058d4571c6a1f32be';
-
   const [mySearch, setMySearch] = useState('');
   const [myRecipes,setMyRecipes] = useState([]);
   const [wordSubmitted, setWordSubmitted] = useState('avocado');
@@ -43,15 +42,14 @@ const finalSearch = (e) => {
         <form onSubmit={finalSearch}>
           <input className='search' placeholder='Search...' onChange={myRecipeSearch} value={mySearch}>
           </input>
+
+          <div className="container">
+            <button>
+            <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon" className='icons'/>
+            </button>
+          </div>
         </form>
       </div>
-
-      <div className="container">
-        <button>
-          <img src="https://img.icons8.com/fluency/48/000000/fry.png" alt="icon" className='icons'/>
-        </button>
-      </div>
-      
 
       {myRecipes.map((element, index) => (
         <MyRecipesComponent 
