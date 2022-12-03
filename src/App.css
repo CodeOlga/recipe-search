@@ -18,7 +18,7 @@ video {
 }
 
 .search {
-  width: 70%;
+  width: 100%;
   padding: 12px 24px;
   font-size: 14px;
   line-height: 18px;
@@ -77,6 +77,6 @@ button {
 
 @media all and (max-width: 500px){
   li {
-    width: 100vw;
+    width: 70vw;
   }
 }
