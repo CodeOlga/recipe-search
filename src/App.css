@@ -49,6 +49,7 @@ li:hover {
 }
 .list {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
 }
@@ -77,6 +78,6 @@ button {
 
 @media all and (max-width: 500px){
   li {
-    width: 80vw;
+    width: 70vw;
   }
 }
