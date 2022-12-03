@@ -74,3 +74,9 @@ button {
   border: 1px solid #575756;
   box-shadow: inset 0px 0px 0px 20px #ddd6e8;
 }
+
+@media all and (max-width: 500px){
+  li {
+    width: 100vw;
+  }
+}

@@ -5,8 +5,8 @@ import MyRecipesComponent from './MyRecipesComponent';
 
 function App() {
 
-  const MY_ID = '139c6380';
-  const MY_KEY = 'a9c4440dce8fb0b058d4571c6a1f32be';
+  const MY_ID = '#';
+  const MY_KEY = '#';
   const [mySearch, setMySearch] = useState('');
   const [myRecipes,setMyRecipes] = useState([]);
   const [wordSubmitted, setWordSubmitted] = useState('avocado');
