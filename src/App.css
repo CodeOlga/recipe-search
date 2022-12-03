@@ -77,6 +77,6 @@ button {
 
 @media all and (max-width: 500px){
   li {
-    width: 70vw;
+    width: 80vw;
   }
 }
