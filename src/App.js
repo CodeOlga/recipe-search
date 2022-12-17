@@ -5,8 +5,8 @@ import MyRecipesComponent from './MyRecipesComponent';
 
 function App() {
 
-  const MY_ID = '#';
-  const MY_KEY = '#';
+  const MY_ID = process.env.REACT_APP_MY_ID;
+  const MY_KEY = process.env.REACT_APP_MY_KEY;
   const [mySearch, setMySearch] = useState('');
   const [myRecipes,setMyRecipes] = useState([]);
   const [wordSubmitted, setWordSubmitted] = useState('avocado');
