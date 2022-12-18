@@ -18,7 +18,7 @@ function App() {
       setMyRecipes(data.hits);
     }
     getRecipe();
-  }, [wordSubmitted])
+  }, [wordSubmitted, MY_ID, MY_KEY])
 
 const myRecipeSearch = (e) => {
   setMySearch(e.target.value);
